@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Ofuscador de textos</title>
+    
+    <style>
+        body{
+            background-color:#8FBC8F;
+            margin: 0;
+            padding: 0;
+        }
+        #textoNormal{
+            position: absolute;
+            top: 15%;
+            left: 25%;
+        }
+        #textoOfuscado{
+            position: absolute;
+            top:62%;
+            left: 25%;
+        }
+        div{
+            background-color:#2F4F4F;
+            color: #98FB98;
+            text-align: center;
+            font-size: 35px;
+            font-family: cursive;
+            margin-left: 0;
+        }
+        #botao1{
+            position: absolute;
+            left: 25%;
+            top: 55%;
+        }
+        #botao2{
+            position: absolute;
+            left: 72%;
+            top: 55%;           
+        }
+        footer{
+            position: absolute;
+            left: 1%;
+            top: 100%;       
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            color: #98FB98;
+            background-color: #2F4F4F;
+        }
+       
+        
+    </style>
+
+    <script>
+        var entrada="";
+        var saida="";
+        var reorganiza="";
+
+        function converte(){
+            entrada =document.getElementById("textoNormal").value;
+            saida =entrada.replace(/e/gi,'enter').replace(/i/gi, 'inis').replace(/o/gi, 'omber').replace(/u/gi, 'ufter').replace(/a/gi, 'ais');
+            document.getElementById('textoOfuscado').value=saida;
+        
+        }
+        function reverte(){
+        reorganiza=entrada.replace(/enter/gi, 'e').replace(/inis/gi, 'i').replace(/omber/gi, 'o').replace(/ufter/gi, 'u').replace(/ais/gi, 'a');
+        document.getElementById("textoOfuscado").value=reorganiza
+        }
+    </script>
+            
+</head>
+<body>
+    <div>Ofuscador de textos</div>
+
+    <textarea  id="textoNormal" cols="100" rows="15" ></textarea>
+    <p><button id="botao1" onclick="converte()" > Ofuscar</button>
+    <button id="botao2"  onclick="reverte()" >Desofuscar</button></p>
+    <p><textarea id="textoOfuscado" cols="100" rows="15" ></textarea></p>
+
+    <footer>Kaique Winicios Souza RA: 20034680-5 Sistemas para internet Unicesumar</footer>
+    
+</body>
+
+</body>
+</html>
